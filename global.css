@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ribbonstyle {
+    background-color: rgb(200 0 0);
+    margin: 1vh;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg) translate(20vh, -30vh);
+}
+
+.spacemono {
+    font-family: 'SpaceMono';
+}
