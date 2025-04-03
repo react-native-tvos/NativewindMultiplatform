@@ -1,24 +1,9 @@
-import { Link } from 'expo-router';
-import { Pressable, Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { reactNativeInfo } from '@/constants/ReactNativeInfo';
 import { ExternalLink } from '@/components/ExternalLink';
+import { ThemedText } from '@/components/ThemedText';
 
-function ThemedText({ type, children }: { type?: string; children: any }) {
-  if (type === 'title') {
-    return (
-      <Text className="text-[5vh] leading-[6vh] text-bold">{children}</Text>
-    );
-  }
-  if (type === 'link') {
-    return (
-      <Text className="text-[3vh] leading-[4vh] text-bold text-blue-700">
-        {children}
-      </Text>
-    );
-  }
-  return <Text className="text-[3vh] leading-[4vh]">{children}</Text>;
-}
 export default function Modal() {
   const { rnVersion, routerVersion, nativewindVersion } = reactNativeInfo;
   // If the page was reloaded or navigated to directly, then the modal should be presented as
@@ -42,13 +27,9 @@ export default function Modal() {
         </View>
       </ExternalLink>
       {/* Use `../` as a simple way to navigate to the root. This is not analogous to "goBack". */}
-      <Link href="/" asChild>
-        <Pressable>
-          {() => (
-            <Text className="text-[3vh] hover:text-blue-500">Dismiss</Text>
-          )}
-        </Pressable>
-      </Link>
+      <ExternalLink href="/">
+        <ThemedText type="link">Dismiss</ThemedText>
+      </ExternalLink>
     </View>
   );
 }

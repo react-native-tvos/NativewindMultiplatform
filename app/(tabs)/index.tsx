@@ -1,8 +1,8 @@
 import { useColorScheme } from 'nativewind';
 import { Pressable, Text, View } from 'react-native';
-
 import { useRouter } from 'expo-router';
 
+import { ThemedText } from '@/components/ThemedText';
 import '../../global.css';
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
   return (
     <View className="flex-1 justify-center items-center gap-10 bg-[--color-background]">
       <Text className="text-[5vh] text-[--color-text]">Variables!!!</Text>
+      <ThemedText type="title">Themed text</ThemedText>
       <Text className="text-[5vh] text-[--color-green]">
         {`Color scheme: ${colorScheme}`}
       </Text>
@@ -23,7 +24,7 @@ const App = () => {
       >
         {({ focused, pressed, hovered }) => {
           return (
-            <Text className="text-[5vh] text-special transition duration-500 active:text-green-500 active:scale-110  focus:text-blue-600 hover:text-blue-600">{`Transitions button${
+            <Text className="text-[5vh] text-[--color-link] transition duration-500 active:text-green-500 active:scale-110  focus:text-blue-600 hover:text-blue-600">{`Press to change color scheme${
               pressed
                 ? ' pressed'
                 : hovered
