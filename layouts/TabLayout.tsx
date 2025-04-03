@@ -17,9 +17,13 @@ export default function TabLayout() {
   return (
     <Tabs
       tabBarActiveTintColor={themedColors.tabIconSelected}
-      tabBarInactiveTintColor={themedColors.tabIconDefault}
+      tabBarInactiveTintColor={themedColors.text}
+      tabBarStyle={{
+        backgroundColor: themedColors.background,
+      }}
       rippleColor={themedColors.tint}
       labeled={true}
+      translucent
     >
       <Tabs.Screen
         name="index"
