@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "NativeWindTV",
-    "slug": "NativeWindTV",
-    "scheme": "nativewindtv",
+    "name": "NativewindMultiplatform",
+    "slug": "NativewindMultiplatform",
+    "scheme": "nativewindmultiplatform",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png"

@@ -16,12 +16,12 @@ export default function Modal() {
       <ThemedText>{`expo-router: ${routerVersion}`}</ThemedText>
       <ThemedText>{`react-native-tvos: ${rnVersion}`}</ThemedText>
       <ThemedText>{`nativewind: ${nativewindVersion}`}</ThemedText>
-      <ExternalLink href="https://github.com/react-native-tvos/NativeWindTV">
+      <ExternalLink href="https://github.com/react-native-tvos/NativewindMultiplatform">
         <View className="flex-row mb-[2vh]">
           <ThemedText>Repository:</ThemedText>
           <View className="ml-[2vw]">
             <ThemedText type="link">
-              https://github.com/react-native-tvos/NativeWindTV
+              https://github.com/react-native-tvos/NativewindMultiplatform
             </ThemedText>
           </View>
         </View>

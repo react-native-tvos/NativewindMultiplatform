@@ -1,4 +1,19 @@
 {
+  "name": "nativewindmultiplatform",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "postinstall": "patch-package",
+    "prebuild": "DEBUG=expo:* expo prebuild --clean",
+    "prebuild:tv": "DEBUG=expo:* EXPO_TV=1 expo prebuild --clean",
+    "start": "expo start",
+    "web": "expo start --web",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "build:web": "expo export --platform web",
+    "deploy:web": "eas deploy --environment=development",
+    "lint": "expo lint"
+  },
   "dependencies": {
     "@bottom-tabs/react-navigation": "^0.9.0",
     "@expo/metro-runtime": "~4.0.1",
@@ -34,12 +49,6 @@
     "tailwindcss": "^3.4.15",
     "typescript": "~5.3.3"
   },
-  "name": "nativewindtv",
-  "slug": "nativewindtv",
-  "scheme": "nativewindtv",
-  "version": "1.0.0",
-  "main": "expo-router/entry",
-  "private": true,
   "expo": {
     "install": {
       "exclude": [
@@ -47,18 +56,6 @@
         "react-native-reanimated"
       ]
     }
-  },
-  "scripts": {
-    "postinstall": "patch-package",
-    "prebuild": "DEBUG=expo:* expo prebuild --clean",
-    "prebuild:tv": "DEBUG=expo:* EXPO_TV=1 expo prebuild --clean",
-    "start": "expo start",
-    "web": "expo start --web",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "build:web": "expo export --platform web",
-    "deploy:web": "eas deploy --environment=development",
-    "lint": "expo lint"
   },
   "packageManager": "yarn@1.22.22"
 }
