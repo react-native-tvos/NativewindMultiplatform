@@ -1,5 +1,9 @@
 import { Text } from 'react-native';
 
+import { useTheme } from '@/hooks/useTheme';
+
+import '../global.css';
+
 export function ThemedText({
   type,
   children,
@@ -7,17 +11,33 @@ export function ThemedText({
   type?: string;
   children: any;
 }) {
+  const theme = useTheme();
   if (type === 'title') {
     return (
-      <Text className="text-[5vh] leading-[6vh] text-bold">{children}</Text>
-    );
-  }
-  if (type === 'link') {
-    return (
-      <Text className="text-[3vh] leading-[4vh] text-bold text-[--color-link]">
+      <Text
+        style={theme}
+        className="text-[5vh] leading-[6vh] text-bold text-[--color-text]"
+      >
         {children}
       </Text>
     );
   }
-  return <Text className="text-[3vh] leading-[4vh]">{children}</Text>;
+  if (type === 'link') {
+    return (
+      <Text
+        style={theme}
+        className="text-[3vh] leading-[4vh] text-bold text-[--color-link]"
+      >
+        {children}
+      </Text>
+    );
+  }
+  return (
+    <Text
+      style={theme}
+      className="text-[3vh] leading-[4vh] text-[--color-text]"
+    >
+      {children}
+    </Text>
+  );
 }

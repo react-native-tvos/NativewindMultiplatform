@@ -35,6 +35,7 @@ export const theme = {
     '--color-tab-icon-selected': colors.light.tabIconSelected,
     '--color-link': colors.light.link,
     '--color-green': colors.light.green,
+    '--color-special': colors.light.special,
   }),
   dark: vars({
     '--color-text': colors.dark.text,
@@ -45,5 +46,6 @@ export const theme = {
     '--color-tab-icon-selected': colors.dark.tabIconSelected,
     '--color-link': colors.dark.link,
     '--color-green': colors.dark.green,
+    '--color-special': colors.dark.special,
   }),
 };

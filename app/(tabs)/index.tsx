@@ -1,17 +1,27 @@
-import { useColorScheme } from 'nativewind';
+import { useColorScheme, vars } from 'nativewind';
 import { Pressable, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 
-import { ThemedText } from '@/components/ThemedText';
 import '../../global.css';
+import { ThemedText } from '@/components/ThemedText';
+
+const customTheme = vars({
+  '--light-theme-fg': '#ff0000',
+  '--dark-theme-fg': '#00ff00',
+});
 
 const App = () => {
   const router = useRouter();
   const { colorScheme, setColorScheme } = useColorScheme();
   return (
     <View className="flex-1 justify-center items-center gap-10 bg-[--color-background]">
-      <Text className="text-[5vh] text-[--color-text]">Variables!!!</Text>
-      <ThemedText type="title">Themed text</ThemedText>
+      <Text
+        style={customTheme}
+        className="text-[5vh] text-[--light-theme-fg] dark:text-[--dark-theme-fg]"
+      >
+        Variables!!!
+      </Text>
+      <ThemedText type="title">Themed Text</ThemedText>
       <Text className="text-[5vh] text-[--color-green]">
         {`Color scheme: ${colorScheme}`}
       </Text>
