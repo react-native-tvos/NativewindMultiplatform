@@ -1,6 +1,7 @@
 import React from 'react';
 import { withLayoutContext } from 'expo-router';
 import { createNativeBottomTabNavigator } from '@bottom-tabs/react-navigation';
+import TabLayoutJS from './TabLayout.web';
 
 import { Platform } from 'react-native';
 import { colors } from '@/constants/Theme';
@@ -14,6 +15,9 @@ export default function TabLayout() {
   const { colorScheme } = useColorScheme();
   const themedColors = colors[colorScheme ?? 'light'];
 
+  if (Platform.OS === 'android') {
+    return <TabLayoutJS />;
+  }
   return (
     <Tabs
       tabBarActiveTintColor={themedColors.tabIconSelected}
