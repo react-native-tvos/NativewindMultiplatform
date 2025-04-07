@@ -16,7 +16,7 @@ export function ThemedText({
     return (
       <Text
         style={theme}
-        className="text-[5vh] leading-[6vh] text-bold text-[--color-text]"
+        className="text-[5vh] leading-[6vh] text-[--color-text]"
       >
         {children}
       </Text>
@@ -26,7 +26,7 @@ export function ThemedText({
     return (
       <Text
         style={theme}
-        className="text-[3vh] leading-[4vh] text-bold text-[--color-link]"
+        className="text-[3vh] leading-[4vh] text-[--color-link]"
       >
         {children}
       </Text>
