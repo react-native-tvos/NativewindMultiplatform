@@ -49,7 +49,10 @@ const App = () => {
       <Text className="text-[5vh] text-black dark:text-white animate-bounce">
         Animations!!!
       </Text>
-      <Pressable onPress={() => router.navigate('/modal')} className="">
+      <Pressable
+        onPress={() => router.navigate('/modal')}
+        className="transition duration-500 focus:scale-125 active:scale-150"
+      >
         {() => (
           <Text className="text-[3vh] text-red-800 dark:text-red-300 hover:font-bold focus:font-bold active:text-blue-500">
             About

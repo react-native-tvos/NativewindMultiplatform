@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import * as Linking from 'expo-linking';
 import type { Href } from 'expo-router';
 import { type ComponentProps } from 'react';
@@ -32,14 +32,23 @@ function ExternalLinkMobile({ href, ...rest }: Props) {
 }
 
 function ExternalLinkTV({ href, ...rest }: Props) {
+  const router = useRouter();
   return (
     <Pressable
-      onPress={() =>
-        Linking.openURL(href).catch((reason) => alert(`${reason}`))
-      }
-      style={({ pressed, focused }) => ({
-        opacity: pressed || focused ? 0.6 : 1.0,
-      })}
+      className="transition duration-500 focus:scale-125 active:scale-100"
+      onPress={() => {
+        if (typeof href === 'string' && !href.startsWith('http')) {
+          router.navigate(href as Href);
+          return;
+        }
+        Linking.canOpenURL(href).then((supported) => {
+          if (!supported) {
+            alert(`Don't know how to open this URL: ${href}`);
+            return;
+          }
+          Linking.openURL(href).catch((reason) => alert(`${reason}`));
+        });
+      }}
     >
       {rest.children}
     </Pressable>

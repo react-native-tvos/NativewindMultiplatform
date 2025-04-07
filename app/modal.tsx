@@ -34,7 +34,7 @@ export default function Modal() {
         </View>
       </ExternalLink>
       {/* Use `../` as a simple way to navigate to the root. This is not analogous to "goBack". */}
-      <ExternalLink href="/">
+      <ExternalLink href="../">
         <ThemedText type="link">Dismiss</ThemedText>
       </ExternalLink>
     </View>
