@@ -46,7 +46,7 @@ const App = () => {
           );
         }}
       </Pressable>
-      <Text className="text-[5vh] dark:text-white animate-bounce">
+      <Text className="text-[5vh] text-black dark:text-white animate-bounce">
         Animations!!!
       </Text>
       <Pressable onPress={() => router.navigate('/modal')} className="">
