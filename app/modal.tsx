@@ -1,5 +1,4 @@
-import { Pressable, Text, View } from 'react-native';
-import { useRouter } from 'expo-router';
+import { View } from 'react-native';
 
 import { reactNativeInfo } from '@/constants/ReactNativeInfo';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -10,7 +9,6 @@ import { useTheme } from '@/hooks/useTheme';
 
 export default function Modal() {
   const theme = useTheme();
-  const router = useRouter();
   const { rnVersion, routerVersion, nativewindVersion } = reactNativeInfo;
   // If the page was reloaded or navigated to directly, then the modal should be presented as
   // a full screen page. You may need to change the UI to account for this.
@@ -25,26 +23,15 @@ export default function Modal() {
       <ThemedText>{`expo-router: ${routerVersion}`}</ThemedText>
       <ThemedText>{`react-native-tvos: ${rnVersion}`}</ThemedText>
       <ThemedText>{`nativewind: ${nativewindVersion}`}</ThemedText>
-      <ExternalLink href="https://github.com/react-native-tvos/NativewindMultiplatform">
-        <View className="flex-row mb-[2vh]">
-          <ThemedText>Repository:</ThemedText>
-          <View className="ml-[2vw]">
-            <ThemedText type="link">
-              https://github.com/react-native-tvos/NativewindMultiplatform
-            </ThemedText>
-          </View>
-        </View>
+      <View className="flex-row items-center gap-[3vh]">
+        <ThemedText>Source code:</ThemedText>
+        <ExternalLink href="https://github.com/react-native-tvos/NativewindMultiplatform">
+          https://github.com/react-native-tvos/NativewindMultiplatform
+        </ExternalLink>
+      </View>
+      <ExternalLink className="!width-full !flex-1" href="../">
+        Dismiss
       </ExternalLink>
-      {/* Use `../` as a simple way to navigate to the root. This is not analogous to "goBack". */}
-      <Pressable
-        onPress={() => router.navigate('../')}
-        tvParallaxProperties={{ enabled: false }}
-        className="transition-all duration-500 focus:scale-[--scale-focus] hover:scale-[--scale-focus]"
-      >
-        <Text className="text-[3vh] text-red-800 dark:text-red-300">
-          Dismiss
-        </Text>
-      </Pressable>
     </View>
   );
 }

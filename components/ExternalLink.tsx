@@ -1,42 +1,35 @@
-import { Link, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import * as Linking from 'expo-linking';
 import type { Href } from 'expo-router';
-import { type ComponentProps } from 'react';
-import { Platform, Pressable } from 'react-native';
+import { GestureResponderEvent, Platform } from 'react-native';
+import { ThemedButton } from './ThemedButton';
 
 const openBrowserAsync =
   Platform.isTV && Platform.OS === 'ios'
     ? async () => {}
     : require('expo-web-browser').openBrowserAsync;
 
-type Props = Omit<ComponentProps<typeof Link>, 'href'> & {
+export function ExternalLink({
+  href,
+  children,
+  className,
+}: {
   href: string;
-};
-
-function ExternalLinkMobile({ href, ...rest }: Props) {
+  children: string;
+  className?: string;
+}) {
+  const router = useRouter();
   return (
-    <Link
-      target="_blank"
-      {...rest}
-      href={href as Href}
-      onPress={async (event) => {
+    <ThemedButton
+      className={className}
+      textClassName="!text-[3vh] text-red-800 dark:text-red-300"
+      onPress={async (event: GestureResponderEvent) => {
         if (Platform.OS !== 'web') {
           // Prevent the default behavior of linking to the default browser on native.
           event.preventDefault();
           // Open the link in an in-app browser.
           await openBrowserAsync(href);
         }
-      }}
-    />
-  );
-}
-
-function ExternalLinkTV({ href, ...rest }: Props) {
-  const router = useRouter();
-  return (
-    <Pressable
-      className="transition duration-500 focus:scale-[--scale-focus] active:scale-100"
-      onPress={() => {
         if (typeof href === 'string' && !href.startsWith('http')) {
           router.navigate(href as Href);
           return;
@@ -50,11 +43,7 @@ function ExternalLinkTV({ href, ...rest }: Props) {
         });
       }}
     >
-      {rest.children}
-    </Pressable>
+      {children}
+    </ThemedButton>
   );
-}
-
-export function ExternalLink(props: Props) {
-  return Platform.isTV ? ExternalLinkTV(props) : ExternalLinkMobile(props);
 }

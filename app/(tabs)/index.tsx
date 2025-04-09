@@ -4,6 +4,8 @@ import { useRouter } from 'expo-router';
 
 import '../../global.css';
 import { ThemedText } from '@/components/ThemedText';
+import { ThemedButton } from '@/components/ThemedButton';
+import { ExternalLink } from '@/components/ExternalLink';
 
 const customTheme = vars({
   '--light-theme-fg': '#ff0000',
@@ -25,27 +27,17 @@ const App = () => {
       <Text className="text-[5vh] text-[--color-green]">
         {`Color scheme: ${colorScheme}`}
       </Text>
-      <Pressable
+      <ThemedButton
         onPress={() =>
           setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
         }
-        tvParallaxProperties={{ enabled: false }}
-        className="transition-all duration-500 focus:scale-[--scale-focus] hover:scale-[--scale-focus]"
       >
-        <Text className="text-[5vh] text-[--color-link]">
-          Press to change color scheme
-        </Text>
-      </Pressable>
+        Press to change color scheme
+      </ThemedButton>
       <Text className="text-[5vh] text-black dark:text-white animate-bounce">
         Animations!!!
       </Text>
-      <Pressable
-        onPress={() => router.navigate('/modal')}
-        tvParallaxProperties={{ enabled: false }}
-        className="transition-all duration-500 focus:scale-[--scale-focus] hover:scale-[--scale-focus]"
-      >
-        <Text className="text-[3vh] text-red-800 dark:text-red-300">About</Text>
-      </Pressable>
+      <ExternalLink href="/modal">About</ExternalLink>
     </View>
   );
 };
