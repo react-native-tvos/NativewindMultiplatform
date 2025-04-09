@@ -35,7 +35,7 @@ function ExternalLinkTV({ href, ...rest }: Props) {
   const router = useRouter();
   return (
     <Pressable
-      className="transition duration-500 focus:scale-125 active:scale-100"
+      className="transition duration-500 focus:scale-[--scale-focus] active:scale-100"
       onPress={() => {
         if (typeof href === 'string' && !href.startsWith('http')) {
           router.navigate(href as Href);

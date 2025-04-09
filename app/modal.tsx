@@ -1,4 +1,5 @@
-import { View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 
 import { reactNativeInfo } from '@/constants/ReactNativeInfo';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -9,6 +10,7 @@ import { useTheme } from '@/hooks/useTheme';
 
 export default function Modal() {
   const theme = useTheme();
+  const router = useRouter();
   const { rnVersion, routerVersion, nativewindVersion } = reactNativeInfo;
   // If the page was reloaded or navigated to directly, then the modal should be presented as
   // a full screen page. You may need to change the UI to account for this.
@@ -34,9 +36,15 @@ export default function Modal() {
         </View>
       </ExternalLink>
       {/* Use `../` as a simple way to navigate to the root. This is not analogous to "goBack". */}
-      <ExternalLink href="../">
-        <ThemedText type="link">Dismiss</ThemedText>
-      </ExternalLink>
+      <Pressable
+        onPress={() => router.navigate('../')}
+        tvParallaxProperties={{ enabled: false }}
+        className="transition-all duration-500 focus:scale-[--scale-focus] hover:scale-[--scale-focus]"
+      >
+        <Text className="text-[3vh] text-red-800 dark:text-red-300">
+          Dismiss
+        </Text>
+      </Pressable>
     </View>
   );
 }
