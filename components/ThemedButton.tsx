@@ -1,4 +1,4 @@
-import { GestureResponderEvent, Pressable, Text } from 'react-native';
+import { GestureResponderEvent, Pressable } from 'react-native';
 
 import '../global.css';
 import { ThemedText } from './ThemedText';
@@ -21,7 +21,7 @@ export function ThemedButton({
     <Pressable
       onPress={onPress}
       tvParallaxProperties={{ enabled: false }}
-      className={`${defaultPressableClassName} ${className}`}
+      className={`${defaultPressableClassName} ${className ?? ''}`}
     >
       <ThemedText type="link" className={textClassName}>
         {children}

@@ -16,10 +16,14 @@ export function ThemedText({
   className?: string;
 }) {
   if (type === 'title') {
-    return <Text className={`${titleStyle} ${className}`}>{children}</Text>;
+    return (
+      <Text className={`${titleStyle} ${className ?? ''}`}>{children}</Text>
+    );
   }
   if (type === 'link') {
-    return <Text className={`${linkStyle} ${className}`}>{children}</Text>;
+    return (
+      <Text className={`${linkStyle} ${className ?? ''}`}>{children}</Text>
+    );
   }
-  return <Text className={`${textStyle} ${className}`}>{children}</Text>;
+  return <Text className={`${textStyle} ${className ?? ''}`}>{children}</Text>;
 }
