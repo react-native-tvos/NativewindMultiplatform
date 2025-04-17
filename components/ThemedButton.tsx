@@ -12,7 +12,7 @@ export function ThemedButton({
   className,
   textClassName,
 }: {
-  onPress: (event: GestureResponderEvent) => void;
+  onPress?: ((event: GestureResponderEvent) => void) | null | undefined;
   children: string;
   className?: string;
   textClassName?: string;

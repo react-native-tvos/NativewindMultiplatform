@@ -6,23 +6,25 @@ import {
   TabTriggerSlotProps,
 } from 'expo-router/ui';
 import React from 'react';
-import { Pressable, Text } from 'react-native';
 
 import '../global.css';
+import { ThemedButton } from '@/components/ThemedButton';
+import { View } from 'react-native';
 
-function CustomTabButton(props: TabTriggerSlotProps) {
+function CustomTabButton(props: TabTriggerSlotProps & { children: string }) {
   return (
-    <Pressable className="flex-1 justify-center items-center" {...props}>
-      <Text
-        className={
+    <View className="flex-1 justify-center items-center">
+      <ThemedButton
+        textClassName={
           props.isFocused
-            ? 'text-[3vh] text-[--color-green] active:text-blue-500'
-            : 'text-[3vh] text-[--color-text] active:text-blue-500'
+            ? 'text-[3vh] text-[--color-tint]'
+            : 'text-[3vh] text-[--color-text]'
         }
+        {...props}
       >
         {props.children}
-      </Text>
-    </Pressable>
+      </ThemedButton>
+    </View>
   );
 }
 CustomTabButton.displayName = 'CustomTabButton';
