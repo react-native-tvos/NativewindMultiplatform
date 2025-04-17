@@ -15,7 +15,7 @@ export default function Modal() {
   return (
     <View
       style={theme}
-      className="flex-1 items-start justify-center pl-[4vh] bg-[--color-background]"
+      className="flex-1 items-start justify-center pl-[6vh] bg-[--color-background]"
     >
       <View className="mb-[4vh]">
         <ThemedText type="title">About this demo</ThemedText>
