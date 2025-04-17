@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 
 import { reactNativeInfo } from '@/constants/ReactNativeInfo';
-import { ExternalLink } from '@/components/ExternalLink';
+import { Link } from '@/components/Link';
 import { ThemedText } from '@/components/ThemedText';
 
 import '../global.css';
@@ -23,15 +23,10 @@ export default function Modal() {
       <ThemedText>{`expo-router: ${routerVersion}`}</ThemedText>
       <ThemedText>{`react-native-tvos: ${rnVersion}`}</ThemedText>
       <ThemedText>{`nativewind: ${nativewindVersion}`}</ThemedText>
-      <View className="flex-row items-center gap-[3vh]">
-        <ThemedText>Source code:</ThemedText>
-        <ExternalLink href="https://github.com/react-native-tvos/NativewindMultiplatform">
-          https://github.com/react-native-tvos/NativewindMultiplatform
-        </ExternalLink>
-      </View>
-      <ExternalLink className="!width-full !flex-1" href="../">
-        Dismiss
-      </ExternalLink>
+      <Link href="https://github.com/react-native-tvos/NativewindMultiplatform">
+        https://github.com/react-native-tvos/NativewindMultiplatform
+      </Link>
+      <Link href="../">Dismiss</Link>
     </View>
   );
 }

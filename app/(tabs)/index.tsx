@@ -1,11 +1,10 @@
 import { useColorScheme, vars } from 'nativewind';
-import { Pressable, Text, View } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Text, View } from 'react-native';
 
 import '../../global.css';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedButton } from '@/components/ThemedButton';
-import { ExternalLink } from '@/components/ExternalLink';
+import { Link } from '@/components/Link';
 
 const customTheme = vars({
   '--light-theme-fg': '#ff0000',
@@ -13,7 +12,6 @@ const customTheme = vars({
 });
 
 const App = () => {
-  const router = useRouter();
   const { colorScheme, setColorScheme } = useColorScheme();
   return (
     <View className="flex-1 justify-center items-center gap-10 bg-[--color-background]">
@@ -24,10 +22,12 @@ const App = () => {
         Variables!!!
       </Text>
       <ThemedText type="title">Themed Text</ThemedText>
+      <ThemedButton onPress={() => {}}>Themed Button</ThemedButton>
       <Text className="text-[5vh] text-[--color-green]">
         {`Color scheme: ${colorScheme}`}
       </Text>
       <ThemedButton
+        textClassName="text-blue-800 dark:text-blue-300"
         onPress={() =>
           setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
         }
@@ -37,7 +37,7 @@ const App = () => {
       <Text className="text-[5vh] text-black dark:text-white animate-bounce">
         Animations!!!
       </Text>
-      <ExternalLink href="/modal">About</ExternalLink>
+      <Link href="/modal">About</Link>
     </View>
   );
 };
