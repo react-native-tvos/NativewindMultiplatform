@@ -1,5 +1,5 @@
 import { useColorScheme, vars } from 'nativewind';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import '../../global.css';
 import { ThemedText } from '@/components/ThemedText';
@@ -15,28 +15,25 @@ const App = () => {
   const { colorScheme, setColorScheme } = useColorScheme();
   return (
     <View className="flex-1 justify-center items-center gap-10 bg-[--color-background]">
-      <Text
+      <ThemedText type="title">Themed Text</ThemedText>
+      <ThemedButton onPress={() => {}}>Themed Button</ThemedButton>
+      <ThemedText
         style={customTheme}
         className="text-[5vh] text-[--light-theme-fg] dark:text-[--dark-theme-fg]"
       >
-        Variables!!!
-      </Text>
-      <ThemedText type="title">Themed Text</ThemedText>
-      <ThemedButton onPress={() => {}}>Themed Button</ThemedButton>
-      <Text className="text-[5vh] text-[--color-green]">
-        {`Color scheme: ${colorScheme}`}
-      </Text>
+        Text with custom CSS variables
+      </ThemedText>
       <ThemedButton
         textClassName="text-blue-800 dark:text-blue-300"
         onPress={() =>
           setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
         }
       >
-        Press to change color scheme
+        {`Press to change color scheme (currently ${colorScheme} )`}
       </ThemedButton>
-      <Text className="text-[5vh] text-black dark:text-white animate-bounce">
+      <ThemedText className="text-[5vh] animate-bounce">
         Animations!!!
-      </Text>
+      </ThemedText>
       <Link href="/modal">About</Link>
     </View>
   );
