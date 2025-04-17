@@ -15,18 +15,20 @@ export default function Modal() {
   return (
     <View
       style={theme}
-      className="flex-1 items-start justify-center pl-[6vh] bg-[--color-background]"
+      className="flex-1 m-0 items-start justify-center bg-[--color-background]"
     >
-      <View className="mb-[4vh]">
-        <ThemedText type="title">About this demo</ThemedText>
+      <View className="w-[90%] ml-[5%] mr-[5%] mb-[4vh] p-[1vh] border-b-hairline border-[--color-link] items-center">
+        <ThemedText type="link">About this demo</ThemedText>
       </View>
-      <ThemedText>{`expo-router: ${routerVersion}`}</ThemedText>
-      <ThemedText>{`react-native-tvos: ${rnVersion}`}</ThemedText>
-      <ThemedText>{`nativewind: ${nativewindVersion}`}</ThemedText>
-      <Link href="https://github.com/react-native-tvos/NativewindMultiplatform">
-        https://github.com/react-native-tvos/NativewindMultiplatform
-      </Link>
-      <Link href="../">Dismiss</Link>
+      <View className="w-[90%] ml-[5%] mr-[5%] mb-[4vh]">
+        <ThemedText className="!text-[3vh]">{`expo-router: ${routerVersion}`}</ThemedText>
+        <ThemedText className="!text-[3vh]">{`react-native-tvos: ${rnVersion}`}</ThemedText>
+        <ThemedText className="!text-[3vh]">{`nativewind: ${nativewindVersion}`}</ThemedText>
+        <Link href="https://github.com/react-native-tvos/NativewindMultiplatform">
+          https://github.com/react-native-tvos/NativewindMultiplatform
+        </Link>
+        <Link href="../">Dismiss</Link>
+      </View>
     </View>
   );
 }
