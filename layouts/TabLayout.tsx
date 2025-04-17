@@ -42,7 +42,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="tvdemo"
         options={{
-          title: 'TV styling demo',
+          title: 'Focus/hover/active styles',
           tabBarIcon: () =>
             Platform.OS === 'android'
               ? require('@/assets/bar_icons/tv.png')

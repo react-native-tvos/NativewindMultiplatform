@@ -37,7 +37,7 @@ export default function TabLayout() {
           <CustomTabButton>Home</CustomTabButton>
         </TabTrigger>
         <TabTrigger name="tvdemo" href="/(tabs)/tvdemo" asChild>
-          <CustomTabButton>TV demo</CustomTabButton>
+          <CustomTabButton>Focus/hover/active styles</CustomTabButton>
         </TabTrigger>
       </TabList>
       <TabSlot />
