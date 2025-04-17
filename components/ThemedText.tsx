@@ -1,29 +1,31 @@
-import { Text } from 'react-native';
+import { StyleSheet, Text, TextProps } from 'react-native';
 
 import '../global.css';
+import { useTheme } from '@/hooks/useTheme';
 
-const titleStyle = 'text-[5vh] leading-[6vh] text-[--color-text]';
-const linkStyle = 'text-[5vh] leading-[6vh] text-[--color-link]';
-const textStyle = 'text-[3vh] leading-[4vh] text-[--color-text]';
+type ThemedTextType = 'title' | 'link' | 'text';
 
-export function ThemedText({
-  type,
-  children,
-  className,
-}: {
-  type?: string;
-  children: string;
-  className?: string;
-}) {
-  if (type === 'title') {
-    return (
-      <Text className={`${titleStyle} ${className ?? ''}`}>{children}</Text>
-    );
-  }
-  if (type === 'link') {
-    return (
-      <Text className={`${linkStyle} ${className ?? ''}`}>{children}</Text>
-    );
-  }
-  return <Text className={`${textStyle} ${className ?? ''}`}>{children}</Text>;
+const themedTextClassNames: { [key in ThemedTextType]: string } = {
+  title: 'text-[5vh] leading-[6vh] text-[--color-text]',
+  link: 'text-[5vh] leading-[6vh] text-[--color-link]',
+  text: 'text-[5vh] leading-[6vh] text-[--color-text]',
+};
+
+export function ThemedText(
+  props: TextProps & {
+    type?: ThemedTextType;
+    children: string;
+    className?: string;
+    style?: any;
+  },
+) {
+  const theme = useTheme();
+  const type = props?.type ?? 'text';
+  const style = props?.style ?? theme;
+  const className = `${themedTextClassNames[type]} ${props?.className ?? ''}`;
+  return (
+    <Text style={style} className={className}>
+      {props?.children}
+    </Text>
+  );
 }
