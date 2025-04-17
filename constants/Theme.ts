@@ -36,7 +36,7 @@ export const theme = {
     '--color-link': colors.light.link,
     '--color-green': colors.light.green,
     '--color-special': colors.light.special,
-    '--scale-focus': '1.10',
+    '--scale-focus': 1.1,
   }),
   dark: vars({
     '--color-text': colors.dark.text,
@@ -48,6 +48,6 @@ export const theme = {
     '--color-link': colors.dark.link,
     '--color-green': colors.dark.green,
     '--color-special': colors.dark.special,
-    '--scale-focus': '1.10',
+    '--scale-focus': 1.1,
   }),
 };
