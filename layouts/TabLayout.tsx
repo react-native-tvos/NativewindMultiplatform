@@ -40,16 +40,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Two',
-          tabBarIcon: () =>
-            Platform.OS === 'android'
-              ? require('@/assets/bar_icons/code.png')
-              : null,
-        }}
-      />
-      <Tabs.Screen
         name="tvdemo"
         options={{
           title: 'TV styling demo',

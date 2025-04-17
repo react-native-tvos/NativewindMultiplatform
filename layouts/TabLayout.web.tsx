@@ -36,9 +36,6 @@ export default function TabLayout() {
         <TabTrigger name="index" href="/" asChild>
           <CustomTabButton>Home</CustomTabButton>
         </TabTrigger>
-        <TabTrigger name="two" href="/(tabs)/two" asChild>
-          <CustomTabButton>Two</CustomTabButton>
-        </TabTrigger>
         <TabTrigger name="tvdemo" href="/(tabs)/tvdemo" asChild>
           <CustomTabButton>TV demo</CustomTabButton>
         </TabTrigger>
