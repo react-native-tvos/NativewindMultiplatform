@@ -1,6 +1,6 @@
-import { StyleSheet, Text, TextProps } from 'react-native';
+import { Text, TextProps } from 'react-native';
 
-import '../global.css';
+import '@/global.css';
 import { useTheme } from '@/hooks/useTheme';
 
 type ThemedTextType = 'title' | 'link' | 'text';

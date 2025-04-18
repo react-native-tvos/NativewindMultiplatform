@@ -10,9 +10,9 @@ const openBrowserAsync =
     : require('expo-web-browser').openBrowserAsync;
 
 /**
- * Button component to open a URL that can be either a web URL or a route in the app.
+ * Themed button component to open a URL that can be either a web URL or a route in the app.
  */
-export function Link({
+export function ThemedLink({
   href,
   children,
   className,
@@ -25,7 +25,7 @@ export function Link({
   return (
     <ThemedButton
       className={className}
-      textClassName="!text-[3vh] text-red-800 dark:text-red-300"
+      textClassName="!text-[3vh] text-[--color-red]"
       onPress={async (event: GestureResponderEvent) => {
         if (typeof href === 'string' && !href.startsWith('http')) {
           router.navigate(href as Href);
