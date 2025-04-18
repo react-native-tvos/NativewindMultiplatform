@@ -29,6 +29,10 @@ function CustomTabButton(props: TabTriggerSlotProps & { children: string }) {
 }
 CustomTabButton.displayName = 'CustomTabButton';
 
+/**
+ * The tab bar for the app used in web and Android TV.
+ * This is implemented using the Expo Router custom tab layout (https://docs.expo.dev/router/advanced/custom-tabs/)
+ */
 export default function TabLayout() {
   return (
     <Tabs>

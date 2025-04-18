@@ -11,11 +11,16 @@ export const Tabs = withLayoutContext(
   createNativeBottomTabNavigator().Navigator,
 );
 
+/**
+ * The tab bar for the app.
+ * For Android TV, we return the web version.
+ * For other native platforms, we use the native tab bar provided by react-native-bottom-tabs.
+ */
 export default function TabLayout() {
   const { colorScheme } = useColorScheme();
   const themedColors = colorScheme === 'dark' ? darkColors : lightColors;
 
-  if (Platform.OS === 'android') {
+  if (Platform.OS === 'android' && Platform.isTV) {
     return <TabLayoutJS />;
   }
   return (

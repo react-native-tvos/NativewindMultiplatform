@@ -9,8 +9,10 @@ const defaultPressableClassName =
     */
   // 'transition-all duration-500 focus:scale-[--scale-focus] hover:scale-[--scale-hover] active:scale-[--scale-active]';
   /*
+    This style provides a rounded border on focus and hover, and scales the button when it is active, with a smooth 0.5 second animation.
    */
-  'rounded-[2vh] p-[0.5vh] border-[0.25vh] border-[--color-background] transition-all duration-500 ' +
+  'rounded-[2vh] p-[0.5vh] border-[0.25vh] border-[--color-background] ' +
+  'transition-all duration-500 ' +
   'focus:border-[--color-tab-icon-default] ' +
   'hover:border-[--color-tab-icon-default] ' +
   'active:scale-[--scale-active]';
