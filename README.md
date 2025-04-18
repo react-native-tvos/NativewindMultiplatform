@@ -8,10 +8,6 @@ You can see the web version at
 
 https://nativewindmultiplatform.expo.app/
 
-![Android TV screenshot](https://github.com/user-attachments/assets/35643c33-02d2-47b5-a3f7-9be08a3c0efe "Android TV screenshot")
-
-![Apple TV screenshot](https://github.com/user-attachments/assets/b72c9c17-9a83-4f01-8570-84da65e816d5 "Apple TV screenshot")
-
 Some of the packages used:
 
 - The [React Native TV fork](https://github.com/react-native-tvos/react-native-tvos), which supports both phone (Android and iOS) and TV (Android TV and Apple TV) targets
@@ -60,17 +56,34 @@ yarn deploy:web # Deploy to the EAS hosting dev environment
 > **_NOTE:_**
 > Setting the environment variable `EXPO_TV=1` enables the `@react-native-tvos/config-tv` plugin to modify the project for TV.
 > This can also be done by setting the parameter `isTV` to true in the `app.json`.
+
 - TV builds:
 
 ## 📝 Notes
 
 The UI is derived from the [NativeWind example app](https://github.com/nativewind/nativewind/tree/main/examples/expo-router) plus [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes [custom CSS transforms](./global.css).
 
-In `tvdemo.tsx`:
+### Theming
+
+[`Theme.ts`](./constants/Theme.ts) contains dark and light versions of the custom colors used in the app, as well as custom scale factors for scaling buttons when they are focused, hovered, or active. The colors are the same as those used in the default template used when creating new Expo Router apps. [`useTheme.ts`](./hooks/useTheme.ts) exports a hook that returns the current theme.
+
+The [root layout](./app/_layout.tsx) sets the theme as the style in the root view.
+
+The [themed components](./components) demonstrate how to use Nativewind class names and the custom colors to provide consistent text, button, and link appearance. These are used both in the [home screen](<./app/(tabs)/index.tsx>) and the [tab layout for web](./layouts/TabLayout.tsx).
+
+### Tab layout
+
+The app provides a [native tab layout](./layouts/TabLayout.tsx) using `react-native-bottom-tabs`.
+
+For web and Android TV, the [web tab layout](./layouts/TabLayout.web.tsx) uses the [custom tab layout](https://docs.expo.dev/router/advanced/custom-tabs/) feature of Expo Router.
+
+### Focus, hover, and active styles
+
+These are shown in the [focus/hover/active demo screen](<./app/(tabs)/tvdemo.tsx>).
 
 - The buttons are styled with `focus:bg-blue-300` and `active:bg-green-600`. On TV, the `focus` prefix causes the style to be applied to controls when `onFocus()` is invoked, and the style is removed when `onBlur()` is invoked. On both TV and mobile, the `active` prefix applies the style when `onPressIn()` is invoked, and removes it when `onPressOut()` is invoked.
 - The buttons are also styled with `hover:bg-blue-300`, to apply that style when the mouse hovers over the button in the web version of the app.
-- Finally, `transition duration-500` is applied so that the focus, blur, and hover transitions happen smoothly with an animation. 
+- Finally, `transition duration-500` is applied so that the focus, blur, and hover transitions happen smoothly with an animation.
 
 ## Learn more
 
