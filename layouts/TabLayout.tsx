@@ -4,7 +4,7 @@ import { createNativeBottomTabNavigator } from '@bottom-tabs/react-navigation';
 import TabLayoutJS from './TabLayout.web';
 
 import { Platform } from 'react-native';
-import { colors } from '@/constants/Theme';
+import { lightColors, darkColors } from '@/constants/Theme';
 import { useColorScheme } from 'nativewind';
 
 export const Tabs = withLayoutContext(
@@ -13,19 +13,19 @@ export const Tabs = withLayoutContext(
 
 export default function TabLayout() {
   const { colorScheme } = useColorScheme();
-  const themedColors = colors[colorScheme ?? 'light'];
+  const themedColors = colorScheme === 'dark' ? darkColors : lightColors;
 
   if (Platform.OS === 'android') {
     return <TabLayoutJS />;
   }
   return (
     <Tabs
-      tabBarActiveTintColor={themedColors.tabIconSelected}
-      tabBarInactiveTintColor={themedColors.text}
+      tabBarActiveTintColor={themedColors['--color-tab-icon-selected']}
+      tabBarInactiveTintColor={themedColors['--color-tab-icon-default']}
       tabBarStyle={{
-        backgroundColor: themedColors.background,
+        backgroundColor: themedColors['--color-background'],
       }}
-      rippleColor={themedColors.tint}
+      rippleColor={themedColors['--color-special']}
       labeled={true}
       translucent
     >

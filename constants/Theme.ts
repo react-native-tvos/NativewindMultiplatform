@@ -1,53 +1,44 @@
 import { vars } from 'nativewind';
 
-export const colors = {
-  light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: '#0a7ea4',
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: '#0a7ea4',
-    link: '#0a7ea4',
-    green: '#166534',
-    special: '#d4d4d4',
-  },
-  dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: '#a0a0a0',
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: '#a0a0a0',
-    link: '#0a7ea4',
-    green: '#86efac',
-    special: '#0f172a',
-  },
+export const lightColors = {
+  '--color-text': '#11181C',
+  '--color-background': '#fff',
+  '--color-tint': '#0a7ea4',
+  '--color-icon': '#687076',
+  '--color-tab-icon-default': '#687076',
+  '--color-tab-icon-selected': '#0a7ea4',
+  '--color-link': '#0a7ea4',
+  '--color-green': '#166534',
+  '--color-red': '#991b1b',
+  '--color-special': '#d4d4d4',
+};
+
+export const darkColors = {
+  '--color-text': '#ECEDEE',
+  '--color-background': '#151718',
+  '--color-tint': '#a0a0a0',
+  '--color-icon': '#9BA1A6',
+  '--color-tab-icon-default': '#9BA1A6',
+  '--color-tab-icon-selected': '#a0a0a0',
+  '--color-link': '#0a7ea4',
+  '--color-green': '#86efac',
+  '--color-red': '#fca5a5',
+  '--color-special': '#0f172a',
+};
+
+const scales = {
+  '--scale-focus': 1.1, // 10% larger
+  '--scale-hover': 1.1, // 10% larger
+  '--scale-active': 1.2, // 20% larger
 };
 
 export const theme = {
   light: vars({
-    '--color-text': colors.light.text,
-    '--color-background': colors.light.background,
-    '--color-tint': colors.light.tint,
-    '--color-icon': colors.light.icon,
-    '--color-tab-icon-default': colors.light.tabIconDefault,
-    '--color-tab-icon-selected': colors.light.tabIconSelected,
-    '--color-link': colors.light.link,
-    '--color-green': colors.light.green,
-    '--color-special': colors.light.special,
-    '--scale-focus': 1.1,
+    ...lightColors,
+    ...scales,
   }),
   dark: vars({
-    '--color-text': colors.dark.text,
-    '--color-background': colors.dark.background,
-    '--color-tint': colors.dark.tint,
-    '--color-icon': colors.dark.icon,
-    '--color-tab-icon-default': colors.dark.tabIconDefault,
-    '--color-tab-icon-selected': colors.dark.tabIconSelected,
-    '--color-link': colors.dark.link,
-    '--color-green': colors.dark.green,
-    '--color-special': colors.dark.special,
-    '--scale-focus': 1.1,
+    ...darkColors,
+    ...scales,
   }),
 };

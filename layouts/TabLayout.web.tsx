@@ -7,7 +7,7 @@ import {
 } from 'expo-router/ui';
 import React from 'react';
 
-import '../global.css';
+import '@/global.css';
 import { ThemedButton } from '@/components/ThemedButton';
 import { View } from 'react-native';
 
