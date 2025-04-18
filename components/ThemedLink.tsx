@@ -1,4 +1,4 @@
-import { useRouter } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import * as Linking from 'expo-linking';
 import type { Href } from 'expo-router';
 import { GestureResponderEvent, Platform } from 'react-native';
@@ -22,6 +22,22 @@ export function ThemedLink({
   className?: string;
 }) {
   const router = useRouter();
+  if (
+    Platform.OS === 'web' &&
+    typeof href === 'string' &&
+    href.startsWith('http')
+  ) {
+    return (
+      <Link target="_blank" href={href as Href} asChild>
+        <ThemedButton
+          className={className}
+          textClassName="!text-[3vh] text-[--color-red]"
+        >
+          {children}
+        </ThemedButton>
+      </Link>
+    );
+  }
   return (
     <ThemedButton
       className={className}
