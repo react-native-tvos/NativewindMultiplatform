@@ -10,6 +10,7 @@ import {
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useWindowDimensions, View } from 'react-native';
 
+import '@/global.css';
 import { useTheme } from '@/hooks/useTheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.

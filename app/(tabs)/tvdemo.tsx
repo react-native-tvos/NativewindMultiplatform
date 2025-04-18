@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import '../../global.css';
+import '@/global.css';
 
 const backgroundStyle = 'bg-[--color-special] flex-1 w-screen';
 

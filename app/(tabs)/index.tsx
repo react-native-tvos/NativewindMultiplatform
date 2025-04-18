@@ -1,10 +1,10 @@
 import { useColorScheme, vars } from 'nativewind';
 import { View } from 'react-native';
 
-import '../../global.css';
+import '@/global.css';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedButton } from '@/components/ThemedButton';
-import { Link } from '@/components/Link';
+import { ThemedLink } from '@/components/ThemedLink';
 
 const customTheme = vars({
   '--light-theme-fg': '#ff0000',
@@ -34,7 +34,7 @@ const App = () => {
       <ThemedText className="text-[5vh] animate-bounce">
         Animations!!!
       </ThemedText>
-      <Link href="/modal">About</Link>
+      <ThemedLink href="/modal">About</ThemedLink>
     </View>
   );
 };
