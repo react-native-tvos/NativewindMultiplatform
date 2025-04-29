@@ -60,7 +60,27 @@ export default function TabLayout() {
           title: 'Video',
           tabBarIcon: () =>
             Platform.OS === 'android'
-              ? require('@/assets/bar_icons/tv.png')
+              ? require('@/assets/bar_icons/video.png')
+              : null,
+        }}
+      />
+      <Tabs.Screen
+        name="legendlistdemo"
+        options={{
+          title: 'LegendList',
+          tabBarIcon: () =>
+            Platform.OS === 'android'
+              ? require('@/assets/bar_icons/code.png')
+              : null,
+        }}
+      />
+      <Tabs.Screen
+        name="flatlistdemo"
+        options={{
+          title: 'FlatList',
+          tabBarIcon: () =>
+            Platform.OS === 'android'
+              ? require('@/assets/bar_icons/code.png')
               : null,
         }}
       />

@@ -6,13 +6,23 @@ import {
   FlatList,
   TouchableHighlight,
 } from 'react-native';
+import { LegendList as OriginalLegendList } from '@legendapp/list';
+import { cssInterop } from 'nativewind';
 
 import '@/global.css';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
+import { ThemedText, ThemedTextType } from '@/components/ThemedText';
 
-const backgroundStyle = 'bg-[--color-background] flex-1 pt-[10vh]';
+const LegendList = cssInterop(OriginalLegendList, {
+  className: 'style',
+  contentContainerClassName: 'contentContainerStyle',
+  indicatorClassName: 'indicatorStyle',
+  columnWrapperClassName: 'columnWrapperStyle',
+});
 
-const buttonStyle = `relative m-[0.5vw] bg-blue-500 w-[80vw] h-[10vh] text-white p-[1vw] font-bold overflow-hidden transition duration-500 hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
+const backgroundStyle = 'bg-[--color-background] flex-1 mt-[10vh]';
+
+const buttonStyle = `m-[0.5vw] bg-blue-500 w-[80vw] h-[10vh] text-white p-[1vw] font-bold overflow-hidden transition hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
 
 const buttonTextStyle = 'text-white text-[2.5vw]';
 
@@ -20,17 +30,15 @@ const ribbonStyle = 'ribbonstyle';
 
 const ribbonTextStyle = 'text-white text-[1vw]';
 
-const blockTextStyle = 'text-blue-800 font-bold text-[2.5vw] p-[1.5vw]';
-
-const data: number[] = [...Array(10).keys()];
+const data: number[] = [...Array(100).keys()];
 
 const TVDemo: () => React.JSX.Element = () => {
   const { width, height } = useScreenDimensions();
 
-  const renderRow = ({ item }: { item: number }) => {
+  const renderRow = ({ item }: { item: unknown }) => {
+    const index = `${item}`;
     return (
-      <View key={item}>
-        <Text className={blockTextStyle}>{`Block ${item}`}</Text>
+      <View className="flex-1 items-center w-500 h-400">
         <Pressable
           onPress={() => console.log('onPress')}
           onLongPress={() => console.log('onLongPress')}
@@ -38,7 +46,7 @@ const TVDemo: () => React.JSX.Element = () => {
           onPressOut={() => console.log('onPressOut')}
           className={buttonStyle}
         >
-          <Text className={buttonTextStyle}>Button 1</Text>
+          <Text className={buttonTextStyle}>Button {index}.1</Text>
           <View className={ribbonStyle}>
             <Text className={ribbonTextStyle}>Press me</Text>
           </View>
@@ -51,7 +59,7 @@ const TVDemo: () => React.JSX.Element = () => {
           tvParallaxProperties={{ enabled: false }}
           className={buttonStyle}
         >
-          <Text className={buttonTextStyle}>Button 2</Text>
+          <Text className={buttonTextStyle}>Button {index}.2</Text>
           <View className={ribbonStyle}>
             <Text className={ribbonTextStyle}>Cool ribbon style</Text>
           </View>
@@ -66,7 +74,7 @@ const TVDemo: () => React.JSX.Element = () => {
           }}
           className={buttonStyle}
         >
-          <Text className={buttonTextStyle}>Button 3</Text>
+          <Text className={buttonTextStyle}>Button {index}.3</Text>
           <View className={ribbonStyle}>
             <Text className={ribbonTextStyle}>ABCDEFG</Text>
           </View>
@@ -91,7 +99,10 @@ const TVDemo: () => React.JSX.Element = () => {
   return (
     <View className={backgroundStyle}>
       <SafeAreaView style={{ width, height }}>
-        <FlatList
+        <ThemedText type={ThemedTextType.title}>
+          Focus/hover/active styles with LegendList
+        </ThemedText>
+        <LegendList
           contentContainerStyle={{
             justifyContent: 'center',
             alignItems: 'center',
@@ -99,7 +110,7 @@ const TVDemo: () => React.JSX.Element = () => {
           }}
           data={data}
           renderItem={renderRow}
-        ></FlatList>
+        ></LegendList>
       </SafeAreaView>
     </View>
   );

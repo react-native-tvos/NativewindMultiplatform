@@ -47,6 +47,12 @@ export default function TabLayout() {
         <TabTrigger name="video" href="/(tabs)/video" asChild>
           <CustomTabButton>Video</CustomTabButton>
         </TabTrigger>
+        <TabTrigger name="legendlistdemo" href="/(tabs)/legendlistdemo" asChild>
+          <CustomTabButton>LegendList</CustomTabButton>
+        </TabTrigger>
+        <TabTrigger name="flatlistdemo" href="/(tabs)/flatlistdemo" asChild>
+          <CustomTabButton>FlatList</CustomTabButton>
+        </TabTrigger>
       </TabList>
       <TabSlot />
     </Tabs>
