@@ -9,7 +9,8 @@ import { useTheme } from '@/hooks/useTheme';
 import { useRouter } from 'expo-router';
 
 export default function About() {
-  const { rnVersion, routerVersion, nativewindVersion } = reactNativeInfo;
+  const { expoVersion, rnVersion, routerVersion, nativewindVersion } =
+    reactNativeInfo;
   const theme = useTheme();
   const router = useRouter();
   const homePageLink =
@@ -24,6 +25,9 @@ export default function About() {
         <ThemedText type={ThemedTextType.link}>About this demo</ThemedText>
       </View>
       <View className="w-[90%] ml-[5%] mr-[5%] mb-[4vh]">
+        <ThemedText
+          type={ThemedTextType.tiny}
+        >{`expo: ${expoVersion}`}</ThemedText>
         <ThemedText
           type={ThemedTextType.tiny}
         >{`expo-router: ${routerVersion}`}</ThemedText>
