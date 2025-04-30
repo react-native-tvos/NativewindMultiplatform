@@ -12,20 +12,26 @@ import { useScreenDimensions } from '@/hooks/useScreenDimensions';
 
 const backgroundStyle = 'bg-[--color-background] flex-1 pt-[10vh]';
 
-const buttonStyle = `relative m-[0.5vw] bg-blue-500 w-[80vw] h-[10vh] text-white p-[1vw] font-bold overflow-hidden transition duration-500 hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
+const buttonBaseStyle = `relative m-[0.5vw] bg-blue-500 w-[80vw] text-white p-[1vw] font-bold overflow-hidden transition duration-500 hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
 
 const buttonTextStyle = 'text-white text-[2.5vw]';
 
 const ribbonStyle = 'ribbonstyle';
-
-const ribbonTextStyle = 'text-white text-[1vw]';
 
 const blockTextStyle = 'text-blue-800 font-bold text-[2.5vw] p-[1.5vw]';
 
 const data: number[] = [...Array(10).keys()];
 
 const TVDemo: () => React.JSX.Element = () => {
-  const { width, height } = useScreenDimensions();
+  const { width, height, orientation } = useScreenDimensions();
+
+  const buttonHeightStyle =
+    orientation === 'landscape' ? 'h-[10vw]' : 'h-[10vh]';
+  const buttonStyle = `${buttonBaseStyle} ${buttonHeightStyle}`;
+
+  const ribbonTextStyle = `text-white ${
+    orientation === 'landscape' ? 'text-[1.2vw]' : 'text-[1.2vh]'
+  }`;
 
   const renderRow = ({ item }: { item: number }) => {
     return (
