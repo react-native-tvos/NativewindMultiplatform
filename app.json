@@ -54,7 +54,10 @@
     },
     "ios": {
       "newArchEnabled": true,
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }
