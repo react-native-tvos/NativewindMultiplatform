@@ -1,5 +1,5 @@
 import { cssInterop, useColorScheme, vars } from 'nativewind';
-import { Platform, View } from 'react-native';
+import { Platform, View, ScrollView } from 'react-native';
 import { Image as ExpoImage } from 'expo-image';
 
 import '@/global.css';
@@ -7,7 +7,6 @@ import { ThemedText, ThemedTextType } from '@/components/ThemedText';
 import { ThemedButton, ThemedButtonBehavior } from '@/components/ThemedButton';
 import { ThemedLink } from '@/components/ThemedLink';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
-import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView as RNSafeAreaContextView } from 'react-native-safe-area-context';
 
 // Apply cssInterop to enable NativeWind for expo-image
