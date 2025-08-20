@@ -26,15 +26,7 @@
         }
       ],
       "expo-router",
-      "react-native-bottom-tabs",
-      [
-        "expo-build-properties",
-        {
-          "ios": {
-            "useFrameworks": "static"
-          }
-        }
-      ],
+      "expo-build-properties",
       "expo-font",
       "expo-web-browser",
       "expo-video"
