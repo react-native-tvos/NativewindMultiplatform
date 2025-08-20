@@ -80,7 +80,9 @@ export default function VideoTest() {
             nativeControls
             contentFit="cover"
             showsTimecodes
-            allowsFullscreen
+            fullscreenOptions={{
+              enable: true,
+            }}
             allowsPictureInPicture
             contentPosition={{ dx: 0, dy: 0 }}
           />
