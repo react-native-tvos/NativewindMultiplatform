@@ -13,7 +13,7 @@ Some of the packages used:
 - The [React Native TV fork](https://github.com/react-native-tvos/react-native-tvos), which supports both phone (Android and iOS) and TV (Android TV and Apple TV) targets
 - The [React Native TV config plugin](https://github.com/react-native-tvos/config-tv/tree/main/packages/config-tv), to allow Expo prebuild to modify the project's native files for TV builds
 - The [NativeWind](https://www.nativewind.dev/) package which lets you use Tailwind CSS in react-native.
-- The [react-native-bottom-tabs](https://github.com/okwasniewski/react-native-bottom-tabs) package that provides a fully native tab bar (top bar for Apple TV, bottom bar for Android TV).
+- The [expo-router native tabs](https://docs.expo.dev/router/advanced/native-tabs/) experimental feature in Expo SDK 54.
 
 ## 🚀 How to use
 
@@ -71,7 +71,7 @@ The [themed components](./components) demonstrate how to use NativeWind class na
 
 ### Tab layout
 
-The app provides a [native tab layout](./layouts/TabLayout.tsx) using `react-native-bottom-tabs`.
+The app provides a [native tab layout](./layouts/TabLayout.tsx) using `expo-router/unstable-native-tabs`.
 
 For web and Android TV, the [web tab layout](./layouts/TabLayout.web.tsx) uses the [custom tab layout](https://docs.expo.dev/router/advanced/custom-tabs/) feature of Expo Router.
 
