@@ -1,0 +1,30 @@
+diff --git a/node_modules/react-native-reanimated/lib/module/createAnimatedComponent/NativeEventsManager.js b/node_modules/react-native-reanimated/lib/module/createAnimatedComponent/NativeEventsManager.js
+index 1c2273e..838249c 100644
+--- a/node_modules/react-native-reanimated/lib/module/createAnimatedComponent/NativeEventsManager.js
++++ b/node_modules/react-native-reanimated/lib/module/createAnimatedComponent/NativeEventsManager.js
+@@ -80,8 +80,8 @@ export class NativeEventsManager {
+       // On the first render of a component, we may already receive a resolved view tag.
+       return this.#managedComponent.getComponentViewTag();
+     }
+-    if (componentAnimatedRef.__nativeTag) {
+-      return componentAnimatedRef.__nativeTag ?? -1;
++    if (componentAnimatedRef?.__nativeTag) {
++      return componentAnimatedRef?.__nativeTag ?? -1;
+     }
+     /*
+       When a component is updated, a child could potentially change and have a different 
+diff --git a/node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts b/node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts
+index 1935c56..775da63 100644
+--- a/node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts
++++ b/node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts
+@@ -103,8 +103,8 @@ export class NativeEventsManager implements INativeEventsManager {
+       // On the first render of a component, we may already receive a resolved view tag.
+       return this.#managedComponent.getComponentViewTag();
+     }
+-    if (componentAnimatedRef.__nativeTag) {
+-      return componentAnimatedRef.__nativeTag ?? -1;
++    if (componentAnimatedRef?.__nativeTag) {
++      return componentAnimatedRef?.__nativeTag ?? -1;
+     }
+     /*
+       When a component is updated, a child could potentially change and have a different 
