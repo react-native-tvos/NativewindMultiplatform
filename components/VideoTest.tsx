@@ -7,14 +7,10 @@ import { useEffect, useRef, useState } from 'react';
 import { Platform, View } from 'react-native';
 import { useInterval } from '@/hooks/useInterval';
 import { ThemedButton } from './ThemedButton';
-import { cssInterop } from 'nativewind';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
 
 import '@/global.css';
-
-const VideoView: any = cssInterop(ExpoVideoView, {
-  className: 'style',
-});
+import { VideoView } from './CSSWrappedComponents';
 
 const videoSource =
   'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';

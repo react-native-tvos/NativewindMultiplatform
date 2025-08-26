@@ -1,5 +1,4 @@
 import {
-  SafeAreaView,
   Text,
   Pressable,
   View,
@@ -9,25 +8,26 @@ import {
 
 import '@/global.css';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
+import { SafeAreaView } from '@/components/CSSWrappedComponents';
 
-const backgroundStyle = 'bg-[--color-background] flex-1 pt-[10vh]';
+const backgroundClassName = 'bg-[--color-background] flex-1 pt-[8vh]';
 
-const buttonBaseStyle = `relative m-[0.5vw] bg-blue-500 w-[80vw] text-white p-[1vw] font-bold overflow-hidden transition duration-500 hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
+const buttonBaseClassName = `relative m-[0.5vw] bg-blue-500 w-[80vw] text-white p-[1vw] font-bold overflow-hidden transition duration-500 hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
 
-const buttonTextStyle = 'text-white text-[2.5vw]';
+const buttonTextClassName = 'text-white text-[2.5vw]';
 
-const ribbonStyle = 'ribbonstyle';
+const ribbonClassName = 'ribbonstyle';
 
-const blockTextStyle = 'text-blue-800 font-bold text-[2.5vw] p-[1.5vw]';
+const blockTextClassName = 'text-blue-800 font-bold text-[2.5vw] p-[1.5vw]';
 
 const data: number[] = [...Array(10).keys()];
 
 const TVDemo: () => React.JSX.Element = () => {
-  const { width, height, orientation } = useScreenDimensions();
+  const { orientation } = useScreenDimensions();
 
   const buttonHeightStyle =
     orientation === 'landscape' ? 'h-[10vw]' : 'h-[10vh]';
-  const buttonStyle = `${buttonBaseStyle} ${buttonHeightStyle}`;
+  const buttonStyle = `${buttonBaseClassName} ${buttonHeightStyle}`;
 
   const ribbonTextStyle = `text-white ${
     orientation === 'landscape' ? 'text-[1.2vw]' : 'text-[1.2vh]'
@@ -36,7 +36,7 @@ const TVDemo: () => React.JSX.Element = () => {
   const renderRow = ({ item }: { item: number }) => {
     return (
       <View key={item}>
-        <Text className={blockTextStyle}>{`Block ${item}`}</Text>
+        <Text className={blockTextClassName}>{`Block ${item}`}</Text>
         <Pressable
           onPress={() => console.log('onPress')}
           onLongPress={() => console.log('onLongPress')}
@@ -44,8 +44,8 @@ const TVDemo: () => React.JSX.Element = () => {
           onPressOut={() => console.log('onPressOut')}
           className={buttonStyle}
         >
-          <Text className={buttonTextStyle}>Button 1</Text>
-          <View className={ribbonStyle}>
+          <Text className={buttonTextClassName}>Button 1</Text>
+          <View className={ribbonClassName}>
             <Text className={ribbonTextStyle}>Press me</Text>
           </View>
         </Pressable>
@@ -57,8 +57,8 @@ const TVDemo: () => React.JSX.Element = () => {
           tvParallaxProperties={{ enabled: false }}
           className={buttonStyle}
         >
-          <Text className={buttonTextStyle}>Button 2</Text>
-          <View className={ribbonStyle}>
+          <Text className={buttonTextClassName}>Button 2</Text>
+          <View className={ribbonClassName}>
             <Text className={ribbonTextStyle}>Cool ribbon style</Text>
           </View>
         </Pressable>
@@ -72,8 +72,8 @@ const TVDemo: () => React.JSX.Element = () => {
           }}
           className={buttonStyle}
         >
-          <Text className={buttonTextStyle}>Button 3</Text>
-          <View className={ribbonStyle}>
+          <Text className={buttonTextClassName}>Button 3</Text>
+          <View className={ribbonClassName}>
             <Text className={ribbonTextStyle}>ABCDEFG</Text>
           </View>
         </Pressable>
@@ -85,8 +85,8 @@ const TVDemo: () => React.JSX.Element = () => {
           className={buttonStyle}
         >
           <View>
-            <Text className={buttonTextStyle}>TouchableHighlight</Text>
-            <View className={ribbonStyle}>
+            <Text className={buttonTextClassName}>TouchableHighlight</Text>
+            <View className={ribbonClassName}>
               <Text className={ribbonTextStyle}>LMNOP</Text>
             </View>
           </View>
@@ -95,8 +95,8 @@ const TVDemo: () => React.JSX.Element = () => {
     );
   };
   return (
-    <View className={backgroundStyle}>
-      <SafeAreaView style={{ width, height }}>
+    <SafeAreaView className={backgroundClassName}>
+      <View className="h-[75vh]">
         <FlatList
           contentContainerStyle={{
             justifyContent: 'center',
@@ -106,8 +106,8 @@ const TVDemo: () => React.JSX.Element = () => {
           data={data}
           renderItem={renderRow}
         ></FlatList>
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 
