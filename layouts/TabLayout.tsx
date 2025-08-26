@@ -21,6 +21,10 @@ export default function TabLayout() {
         <Label>Video</Label>
         <Icon sf="video" />
       </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="legendlistdemo">
+        <Label>LegendList</Label>
+        <Icon sf="list.bullet" />
+      </NativeTabs.Trigger>
     </NativeTabs>
   );
 }

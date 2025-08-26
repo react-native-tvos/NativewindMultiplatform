@@ -7,6 +7,7 @@ import { ThemedButton, ThemedButtonBehavior } from '@/components/ThemedButton';
 import { ThemedLink } from '@/components/ThemedLink';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
 import { SafeAreaView, Image } from '@/components/CSSWrappedComponents';
+import { useTheme } from '@/hooks/useTheme';
 
 const customTheme = vars({
   '--light-theme-fg': '#ff0000',
@@ -23,8 +24,12 @@ const backgroundClassName = 'bg-[--color-background] flex-1 pt-[8vh]';
 const App = () => {
   const { colorScheme, setColorScheme } = useColorScheme();
   const { orientation } = useScreenDimensions();
+  const theme = useTheme();
   return (
-    <View className="flex-1 justify-center items-center bg-[--color-background]">
+    <View
+      style={theme}
+      className="flex-1 justify-center items-center bg-[--color-background]"
+    >
       <SafeAreaView className={backgroundClassName}>
         <ScrollView
           showsVerticalScrollIndicator
