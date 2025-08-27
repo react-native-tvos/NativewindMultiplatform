@@ -83,11 +83,9 @@ These are shown in the [focus/hover/active demo screen](<./app/(tabs)/tvdemo.tsx
 - The buttons are also styled with `hover:bg-blue-300`, to apply that style when the mouse hovers over the button in the web version of the app.
 - Finally, `transition duration-500` is applied so that the focus, blur, and hover transitions happen smoothly with an animation.
 
-### Compatibility with native components provided by Expo packages
+### Compatibility with third party components
 
-The [home screen](<./app/(tabs)/index.tsx>) shows how to wrap the `<Image />` component provided by `expo-image` for use with NativeWind, using [the `cssInterop()` API](https://www.nativewind.dev/api/css-interop).
-
-The [video demo](./components/VideoTest.tsx) shows the same technique applied to the `<VideoView />` component from `expo-video`.
+The [CSSWrappedComponents.tsx](./components/CSSWrappedComponents.tsx) file demonstrates how to wrap components provided by Expo and other packages to enable them to use NativeWind class names, using [the `cssInterop()` API](https://www.nativewind.dev/api/css-interop).
 
 ## Learn more
 
