@@ -26,15 +26,7 @@
         }
       ],
       "expo-router",
-      "react-native-bottom-tabs",
-      [
-        "expo-build-properties",
-        {
-          "ios": {
-            "useFrameworks": "static"
-          }
-        }
-      ],
+      "expo-build-properties",
       "expo-font",
       "expo-web-browser",
       "expo-video"
@@ -49,11 +41,9 @@
       "typedRoutes": true
     },
     "android": {
-      "edgeToEdgeEnabled": true,
-      "newArchEnabled": true
+      "edgeToEdgeEnabled": true
     },
     "ios": {
-      "newArchEnabled": true,
       "supportsTablet": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false

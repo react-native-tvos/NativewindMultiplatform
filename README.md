@@ -13,7 +13,7 @@ Some of the packages used:
 - The [React Native TV fork](https://github.com/react-native-tvos/react-native-tvos), which supports both phone (Android and iOS) and TV (Android TV and Apple TV) targets
 - The [React Native TV config plugin](https://github.com/react-native-tvos/config-tv/tree/main/packages/config-tv), to allow Expo prebuild to modify the project's native files for TV builds
 - The [NativeWind](https://www.nativewind.dev/) package which lets you use Tailwind CSS in react-native.
-- The [react-native-bottom-tabs](https://github.com/okwasniewski/react-native-bottom-tabs) package that provides a fully native tab bar (top bar for Apple TV, bottom bar for Android TV).
+- The [expo-router native tabs](https://docs.expo.dev/router/advanced/native-tabs/) experimental feature in Expo SDK 54.
 
 ## 🚀 How to use
 
@@ -71,7 +71,7 @@ The [themed components](./components) demonstrate how to use NativeWind class na
 
 ### Tab layout
 
-The app provides a [native tab layout](./layouts/TabLayout.tsx) using `react-native-bottom-tabs`.
+The app provides a [native tab layout](./layouts/TabLayout.tsx) using `expo-router/unstable-native-tabs`.
 
 For web and Android TV, the [web tab layout](./layouts/TabLayout.web.tsx) uses the [custom tab layout](https://docs.expo.dev/router/advanced/custom-tabs/) feature of Expo Router.
 
@@ -83,11 +83,9 @@ These are shown in the [focus/hover/active demo screen](<./app/(tabs)/tvdemo.tsx
 - The buttons are also styled with `hover:bg-blue-300`, to apply that style when the mouse hovers over the button in the web version of the app.
 - Finally, `transition duration-500` is applied so that the focus, blur, and hover transitions happen smoothly with an animation.
 
-### Compatibility with native components provided by Expo packages
+### Compatibility with third party components
 
-The [home screen](<./app/(tabs)/index.tsx>) shows how to wrap the `<Image />` component provided by `expo-image` for use with NativeWind, using [the `cssInterop()` API](https://www.nativewind.dev/api/css-interop).
-
-The [video demo](./components/VideoTest.tsx) shows the same technique applied to the `<VideoView />` component from `expo-video`.
+The [CSSWrappedComponents.tsx](./components/CSSWrappedComponents.tsx) file demonstrates how to wrap components provided by Expo and other packages to enable them to use NativeWind class names, using [the `cssInterop()` API](https://www.nativewind.dev/api/css-interop).
 
 ## Learn more
 

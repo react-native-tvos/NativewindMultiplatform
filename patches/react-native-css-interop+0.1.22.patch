@@ -1,0 +1,51 @@
+diff --git a/node_modules/react-native-css-interop/babel.js b/node_modules/react-native-css-interop/babel.js
+index 5a8a29b..d79f574 100644
+--- a/node_modules/react-native-css-interop/babel.js
++++ b/node_modules/react-native-css-interop/babel.js
+@@ -9,7 +9,7 @@ module.exports = function () {
+           importSource: "react-native-css-interop",
+         },
+       ],
+-      "react-native-reanimated/plugin",
++      "react-native-worklets/plugin",
+     ],
+   };
+ };
+diff --git a/node_modules/react-native-css-interop/dist/runtime/native/render-component.js b/node_modules/react-native-css-interop/dist/runtime/native/render-component.js
+index a352339..f965bee 100644
+--- a/node_modules/react-native-css-interop/dist/runtime/native/render-component.js
++++ b/node_modules/react-native-css-interop/dist/runtime/native/render-component.js
+@@ -111,10 +111,12 @@ function createAnimatedComponent(Component) {
+     else if (Component.displayName?.startsWith("AnimatedComponent")) {
+         return Component;
+     }
++/*
+     if (!(typeof Component !== "function" ||
+         (Component.prototype && Component.prototype.isReactComponent))) {
+         throw new Error(`Looks like you're passing an animation style to a function component \`${Component.name}\`. Please wrap your function component with \`React.forwardRef()\` or use a class component instead.`);
+     }
++ */
+     const { default: Animated } = require("react-native-reanimated");
+     const AnimatedComponent = Animated.createAnimatedComponent(Component);
+     AnimatedComponent.displayName = `Animated.${Component.displayName || Component.name || "Unknown"}`;
+diff --git a/node_modules/react-native-css-interop/src/runtime/native/render-component.tsx b/node_modules/react-native-css-interop/src/runtime/native/render-component.tsx
+index fb8e8c8..8b22477 100644
+--- a/node_modules/react-native-css-interop/src/runtime/native/render-component.tsx
++++ b/node_modules/react-native-css-interop/src/runtime/native/render-component.tsx
+@@ -197,6 +197,7 @@ function createAnimatedComponent(Component: ComponentType<any>): any {
+     return Component;
+   }
+ 
++/*
+   if (
+     !(
+       typeof Component !== "function" ||
+@@ -207,7 +208,7 @@ function createAnimatedComponent(Component: ComponentType<any>): any {
+       `Looks like you're passing an animation style to a function component \`${Component.name}\`. Please wrap your function component with \`React.forwardRef()\` or use a class component instead.`,
+     );
+   }
+-
++ */
+   const { default: Animated } =
+     require("react-native-reanimated") as typeof import("react-native-reanimated");
+ 

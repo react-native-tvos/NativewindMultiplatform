@@ -1,24 +1,13 @@
-import { cssInterop, useColorScheme, vars } from 'nativewind';
-import { Platform, View } from 'react-native';
-import { Image as ExpoImage } from 'expo-image';
+import { useColorScheme, vars } from 'nativewind';
+import { View, ScrollView } from 'react-native';
 
 import '@/global.css';
 import { ThemedText, ThemedTextType } from '@/components/ThemedText';
 import { ThemedButton, ThemedButtonBehavior } from '@/components/ThemedButton';
 import { ThemedLink } from '@/components/ThemedLink';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
-import { ScrollView } from 'react-native-gesture-handler';
-import { SafeAreaView as RNSafeAreaContextView } from 'react-native-safe-area-context';
-
-// Apply cssInterop to enable NativeWind for expo-image
-// https://github.com/nativewind/nativewind/issues/680
-const Image = cssInterop(ExpoImage, {
-  className: 'style',
-});
-
-const SafeAreaView = cssInterop(RNSafeAreaContextView, {
-  className: 'style',
-});
+import { SafeAreaView, Image } from '@/components/CSSWrappedComponents';
+import { useTheme } from '@/hooks/useTheme';
 
 const customTheme = vars({
   '--light-theme-fg': '#ff0000',
@@ -30,15 +19,18 @@ const imageClassNames: { [key: string]: string } = {
   landscape: 'w-[5vw] h-[5vw]',
 };
 
+const backgroundClassName = 'bg-[--color-background] flex-1 pt-[8vh]';
+
 const App = () => {
   const { colorScheme, setColorScheme } = useColorScheme();
   const { orientation } = useScreenDimensions();
-  const safeAreaClassName = `w-screen h-screen ${
-    Platform.OS === 'ios' && Platform.isTV ? 'mt-[10vh]' : ''
-  }`;
+  const theme = useTheme();
   return (
-    <View className="flex-1 justify-center items-center bg-[--color-background]">
-      <SafeAreaView className={safeAreaClassName}>
+    <View
+      style={theme}
+      className="flex-1 justify-center items-center bg-[--color-background]"
+    >
+      <SafeAreaView className={backgroundClassName}>
         <ScrollView
           showsVerticalScrollIndicator
           contentContainerClassName="gap-[1vh] h-fulljustify-center items-center"
