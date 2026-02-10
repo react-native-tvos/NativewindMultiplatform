@@ -3,7 +3,6 @@ import { useWindowDimensions, View } from 'react-native';
 import '@/global.css';
 import { ThemedText, ThemedTextType } from '@/components/ThemedText';
 import { LegendList, SafeAreaView } from '@/components/CSSWrappedComponents';
-import { useTheme } from '@/hooks/useTheme';
 import { ThemedButton } from '@/components/ThemedButton';
 
 const backgroundClassName = 'bg-[--color-background] w-full h-full pt-[8vh]';
@@ -11,10 +10,9 @@ const backgroundClassName = 'bg-[--color-background] w-full h-full pt-[8vh]';
 const data: number[] = [...Array(100).keys()];
 
 const LegendListDemo: () => React.JSX.Element = () => {
-  const theme = useTheme();
   const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={theme} className={backgroundClassName}>
+    <SafeAreaView className={backgroundClassName}>
       <View className="justify-center items-center">
         <ThemedText type={ThemedTextType.title}>LegendList</ThemedText>
       </View>

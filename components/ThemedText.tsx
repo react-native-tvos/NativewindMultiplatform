@@ -1,7 +1,6 @@
 import { Text, TextProps } from 'react-native';
 
 import '@/global.css';
-import { useTheme } from '@/hooks/useTheme';
 import {
   useScreenDimensions,
   ScreenOrientationType,
@@ -42,10 +41,9 @@ export function ThemedText(
     style?: any;
   },
 ) {
-  const theme = useTheme();
   const { orientation } = useScreenDimensions();
   const type = props?.type ?? 'text';
-  const style = props?.style ?? theme;
+  const style = props?.style;
   const baseClassName =
     themedTextClassNames[orientation as ScreenOrientationType][type];
   const className = `${baseClassName} ${props?.className ?? ''}`;
