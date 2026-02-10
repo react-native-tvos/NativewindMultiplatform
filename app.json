@@ -40,9 +40,6 @@
       "tsconfigPaths": true,
       "typedRoutes": true
     },
-    "android": {
-      "edgeToEdgeEnabled": true
-    },
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
