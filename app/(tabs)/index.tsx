@@ -17,17 +17,17 @@ const imageClassNames: { [key: string]: string } = {
   landscape: 'w-[5vw] h-[5vw]',
 };
 
-const backgroundClassName = 'bg-[--color-background] flex-1 pt-[8vh]';
+const backgroundClassName = 'bg-[--color-background] flex-1';
 
 const App = () => {
   const { colorScheme, setColorScheme } = useColorScheme();
   const { orientation } = useScreenDimensions();
   return (
-    <View className="flex-1 justify-center items-center bg-[--color-background]">
+    <View className="flex-1 justify-start items-center bg-[--color-background]">
       <SafeAreaView className={backgroundClassName}>
         <ScrollView
           showsVerticalScrollIndicator
-          contentContainerClassName="gap-[1vh] h-fulljustify-center items-center"
+          contentContainerClassName="gap-[1vh] justify-center items-center"
         >
           <ThemedText type={ThemedTextType.title}>Themed Text</ThemedText>
           <ThemedButton onPress={() => {}}>

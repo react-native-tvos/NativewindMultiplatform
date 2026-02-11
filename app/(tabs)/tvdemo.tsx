@@ -9,7 +9,7 @@ import {
 import '@/global.css';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
 import { SafeAreaView } from '@/components/CSSWrappedComponents';
-const backgroundClassName = 'bg-[--color-background] flex-1 pt-[8vh]';
+const backgroundClassName = 'bg-[--color-background] flex-1';
 
 const buttonBaseClassName = `relative m-[0.5vw] bg-blue-500 w-[80vw] text-white p-[1vw] font-bold overflow-hidden transition duration-500 hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
 

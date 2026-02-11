@@ -5,7 +5,7 @@ import { ThemedText, ThemedTextType } from '@/components/ThemedText';
 import VideoTest from '@/components/VideoTest';
 import { SafeAreaView } from '@/components/CSSWrappedComponents';
 
-const backgroundClassName = 'bg-[--color-background] flex-1 pt-[8vh]';
+const backgroundClassName = 'bg-[--color-background] flex-1';
 
 const App = () => {
   return (
