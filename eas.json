@@ -34,7 +34,7 @@
       }
     },
     "preview:tv": {
-      "extends": "development",
+      "extends": "preview",
       "env": {
         "EXPO_TV": "1"
       }
