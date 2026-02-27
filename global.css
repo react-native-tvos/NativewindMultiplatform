@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --color-text: #11181C;
+    --color-background: #f8f9fa;
+    --color-tint: #0a7ea4;
+    --color-green: #166534;
+    --color-red: #991b1b;
+    --color-special: #d4d4d4;
+    --color-tab-bar-background: #0a7ea4;
+    --color-tab-bar-default: #f8f9fa;
+    --color-tab-bar-selected: #fde047;
+    --scale-focus: 1.1;
+    --scale-hover: 1.1;
+    --scale-active: 1.2;
+}
+
+/* We provide dark colors both as .dark (for manual switching)
+   and as prefers-color-scheme (for detection of system theme) */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #ECEDEE;
+        --color-background: #151718;
+        --color-tint: #88ccff;
+        --color-green: #86efac;
+        --color-red: #fca5a5;
+        --color-special: #0f172a;
+        --color-tab-bar-background: #88ccff;
+        --color-tab-bar-default: #151718;
+        --color-tab-bar-selected: #dc2626;
+    }
+}
+
+.dark {
+        --color-text: #ECEDEE;
+        --color-background: #151718;
+        --color-tint: #88ccff;
+        --color-green: #86efac;
+        --color-red: #fca5a5;
+        --color-special: #0f172a;
+        --color-tab-bar-background: #88ccff;
+        --color-tab-bar-default: #151718;
+        --color-tab-bar-selected: #dc2626;
+}
+
 .ribbonstyle {
     background-color: rgb(200 0 0);
     margin: 1vw;

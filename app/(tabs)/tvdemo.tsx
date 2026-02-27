@@ -9,9 +9,7 @@ import {
 import '@/global.css';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
 import { SafeAreaView } from '@/components/CSSWrappedComponents';
-import { useTheme } from '@/hooks/useTheme';
-
-const backgroundClassName = 'bg-[--color-background] flex-1 pt-[8vh]';
+const backgroundClassName = 'bg-[--color-background] flex-1';
 
 const buttonBaseClassName = `relative m-[0.5vw] bg-blue-500 w-[80vw] text-white p-[1vw] font-bold overflow-hidden transition duration-500 hover:bg-blue-300 focus:bg-blue-300 active:bg-green-500`;
 
@@ -25,7 +23,6 @@ const data: number[] = [...Array(10).keys()];
 
 const TVDemo: () => React.JSX.Element = () => {
   const { orientation } = useScreenDimensions();
-  const theme = useTheme();
 
   const buttonHeightStyle =
     orientation === 'landscape' ? 'h-[10vw]' : 'h-[10vh]';
@@ -97,7 +94,7 @@ const TVDemo: () => React.JSX.Element = () => {
     );
   };
   return (
-    <SafeAreaView style={theme} className={backgroundClassName}>
+    <SafeAreaView className={backgroundClassName}>
       <View className="h-[75vh]">
         <FlatList
           contentContainerStyle={{

@@ -37,7 +37,7 @@ CustomTabButton.displayName = 'CustomTabButton';
 export default function TabLayout() {
   return (
     <Tabs className="bg-[--color-background]">
-      <TabList className="flex flex-row justify-center items-center width-full bg-[--color-tab-bar-background] h-[10vh] ">
+      <TabList className="flex flex-row justify-center items-center w-full bg-[--color-tab-bar-background] h-[10vh] ">
         <TabTrigger name="index" href="/" asChild>
           <CustomTabButton>Home</CustomTabButton>
         </TabTrigger>

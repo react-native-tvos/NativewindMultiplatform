@@ -29,7 +29,8 @@
       "expo-build-properties",
       "expo-font",
       "expo-web-browser",
-      "expo-video"
+      "expo-video",
+      "expo-image"
     ],
     "web": {
       "bundler": "metro",
@@ -40,14 +41,13 @@
       "tsconfigPaths": true,
       "typedRoutes": true
     },
-    "android": {
-      "edgeToEdgeEnabled": true
-    },
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
+    },
+    "android": {
     }
   }
 }

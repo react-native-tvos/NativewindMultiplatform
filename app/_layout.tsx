@@ -10,7 +10,6 @@ import {
 } from 'react-native-reanimated';
 
 import '@/global.css';
-import { useTheme } from '@/hooks/useTheme';
 import { useScreenDimensions } from '@/hooks/useScreenDimensions';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -23,7 +22,6 @@ configureReanimatedLogger({
 });
 
 export default function RootLayout() {
-  const theme = useTheme();
   const { scale } = useScreenDimensions();
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
@@ -43,7 +41,7 @@ export default function RootLayout() {
   }
 
   return (
-    <View style={theme} className="bg-[--color-background] flex-1">
+    <View className="bg-[--color-background] flex-1">
       <GestureHandlerRootView>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
