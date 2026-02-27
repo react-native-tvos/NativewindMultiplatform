@@ -29,7 +29,8 @@
       "expo-build-properties",
       "expo-font",
       "expo-web-browser",
-      "expo-video"
+      "expo-video",
+      "expo-image"
     ],
     "web": {
       "bundler": "metro",
@@ -45,6 +46,8 @@
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
+    },
+    "android": {
     }
   }
 }
