@@ -5,14 +5,10 @@ import { ThemedLink } from '@/components/ThemedLink';
 import { ThemedText, ThemedTextType } from '@/components/ThemedText';
 
 import '../global.css';
-import { useRouter } from 'expo-router';
 
 export default function About() {
   const { expoVersion, rnVersion, routerVersion, nativewindVersion } =
     reactNativeInfo;
-  const router = useRouter();
-  const homePageLink =
-    Platform.OS === 'web' && !router.canGoBack() ? '/' : '../';
 
   return (
     <View className="flex-1 m-0 items-start justify-center bg-[--color-background]">
@@ -38,7 +34,7 @@ export default function About() {
         >
           https://github.com/react-native-tvos/NativewindMultiplatform
         </ThemedLink>
-        <ThemedLink href={homePageLink}>Dismiss</ThemedLink>
+        <ThemedLink href="/">Dismiss</ThemedLink>
       </View>
     </View>
   );
