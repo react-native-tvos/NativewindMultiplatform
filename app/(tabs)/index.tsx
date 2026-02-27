@@ -1,5 +1,5 @@
 import { useColorScheme, vars } from 'nativewind';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Platform } from 'react-native';
 
 import '@/global.css';
 import { ThemedText, ThemedTextType } from '@/components/ThemedText';
@@ -73,14 +73,16 @@ const App = () => {
           </ThemedText>
           <ThemedText className="font-bold">Bold font</ThemedText>
           <ThemedText className="spacemono">Custom font</ThemedText>
-          <ThemedButton
-            textClassName="text-blue-800 dark:text-blue-300"
-            onPress={() =>
-              setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
-            }
-          >
-            {`Press to change color scheme (currently ${colorScheme} )`}
-          </ThemedButton>
+          {Platform.OS === 'web' ? null : (
+            <ThemedButton
+              textClassName="text-blue-800 dark:text-blue-300"
+              onPress={() =>
+                setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
+              }
+            >
+              {`Press to change color scheme (currently ${colorScheme} )`}
+            </ThemedButton>
+          )}
           <ThemedText className="animate-bounce">Animations!!!</ThemedText>
           <ThemedLink href="/about">About</ThemedLink>
         </ScrollView>
