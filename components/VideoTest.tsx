@@ -13,7 +13,7 @@ import '@/global.css';
 import { VideoView } from './CSSWrappedComponents';
 
 const videoSource =
-  'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+  'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4';
 
 export default function VideoTest() {
   const { orientation } = useScreenDimensions();
