@@ -30,7 +30,8 @@
       "expo-font",
       "expo-web-browser",
       "expo-video",
-      "expo-image"
+      "expo-image",
+      "expo-splash-screen"
     ],
     "web": {
       "bundler": "metro",
@@ -45,9 +46,18 @@
       "supportsTablet": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
-      }
+      },
+      "bundleIdentifier": "com.dougexpo.NativewindMultiplatform"
     },
     "android": {
-    }
+      "package": "com.dougexpo.NativewindMultiplatform"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ad9f8649-30bc-4014-90bd-800b1444182c"
+      }
+    },
+    "owner": "douglowderexpo"
   }
 }
