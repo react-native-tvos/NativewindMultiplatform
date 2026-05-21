@@ -12,8 +12,17 @@ import { useScreenDimensions } from '@/hooks/useScreenDimensions';
 import '@/global.css';
 import { VideoView } from './CSSWrappedComponents';
 
-const videoSource =
+const appleVideoSource =
   'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4';
+const androidVideoSource = 'https://samplelib.com/mp4/sample-30s.mp4';
+
+const videoSource = {
+  android: androidVideoSource,
+  ios: appleVideoSource,
+  web: appleVideoSource,
+  windows: androidVideoSource,
+  macos: appleVideoSource,
+};
 
 export default function VideoTest() {
   const { orientation } = useScreenDimensions();
@@ -30,10 +39,11 @@ export default function VideoTest() {
     return duration !== undefined ? (position ?? 0) / duration : 0;
   };
 
-  const player = useVideoPlayer(videoSource, (player) => {
+  const player = useVideoPlayer(videoSource[`${Platform.OS}`], (player) => {
     player.addListener('statusChange', (payload) => {
       setVideoStatus(payload.status);
       console.log(`video status = ${payload.status}`);
+      payload.error && console.log(`video error: ${payload.error.message}`);
     });
   });
 
