@@ -4788,6 +4788,11 @@ inline-style-prefixer@^7.0.1:
   dependencies:
     css-in-js-utils "^3.1.0"
 
+inspect-webkit@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/inspect-webkit/-/inspect-webkit-0.0.5.tgz#db63ae61f18f518945197c89346df551e84bff4b"
+  integrity sha512-584wP/2nJO1LX74nqHP2j0tQzlK9ZTi+D0Z9qeLQjtUR/LCMXQHGX8M0vrsqBwTeGakF7q5GMFpg81nxUYlCvw==
+
 internal-slot@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/internal-slot/-/internal-slot-1.0.7.tgz#c06dcca3ed874249881007b0a5523b172a190802"
@@ -7012,6 +7017,12 @@ serialize-error@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/serialize-error/-/serialize-error-2.1.0.tgz#50b679d5635cdf84667bdc8e59af4e5b81d5f60a"
   integrity sha512-ghgmKt5o4Tly5yEG/UJp8qTd0AN7Xalw4XBtDEKP655B699qMEtra1WlXeE6WIvdEG481JvRxULKsInq/iNysw==
+
+serve-sim@./dependencies/serve-sim-0.1.34.tgz:
+  version "0.1.34"
+  resolved "./dependencies/serve-sim-0.1.34.tgz#d90966d652093c385c5b3c6b3b3ef45b2462ff0c"
+  dependencies:
+    inspect-webkit "^0.0.5"
 
 serve-static@^1.16.2:
   version "1.16.2"

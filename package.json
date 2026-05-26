@@ -52,6 +52,7 @@
     "eslint-config-expo": "~56.0.4",
     "patch-package": "^8.0.0",
     "postinstall-postinstall": "^2.1.0",
+    "serve-sim": "./dependencies/serve-sim-0.1.34.tgz",
     "tailwindcss": "^3.4.15",
     "typescript": "~6.0.3"
   }
