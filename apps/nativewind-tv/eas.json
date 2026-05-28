@@ -6,6 +6,9 @@
     "development": {
       "extends": "production",
       "distribution": "internal",
+      "env": {
+        "EXPO_TV": "1"
+      },
       "android": {
         "gradleCommand": ":app:assembleDebug",
         "buildType": "apk",
@@ -16,15 +19,12 @@
         "simulator": true
       }
     },
-    "development:tv": {
-      "extends": "development",
-      "env": {
-        "EXPO_TV": "1"
-      }
-    },
     "preview": {
       "extends": "production",
       "distribution": "internal",
+      "env": {
+        "EXPO_TV": "1"
+      },
       "ios": {
         "simulator": true
       },
@@ -33,13 +33,11 @@
         "withoutCredentials": true
       }
     },
-    "preview:tv": {
-      "extends": "preview",
+    "production": {
       "env": {
         "EXPO_TV": "1"
       }
-    },
-    "production": {}
+    }
   },
   "submit": {
     "production": {}

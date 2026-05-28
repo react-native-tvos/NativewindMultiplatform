@@ -1,0 +1,6 @@
+{
+  "name": "@nativewindmultiplatform/source",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./app/_layout.tsx"
+}

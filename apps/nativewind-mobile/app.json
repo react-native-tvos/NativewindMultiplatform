@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "NativeWind Mobile",
+    "slug": "nativewindmultiplatform-mobile",
+    "scheme": "nativewindmultiplatform",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "../../packages/source/assets/images/splash.png"
+    },
+    "icon": "../../packages/source/assets/tv_icons/icon-760x760.png",
+    "plugins": [
+      "expo-router",
+      "expo-build-properties",
+      "expo-font",
+      "expo-web-browser",
+      "expo-video",
+      "expo-image",
+      "expo-splash-screen"
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "../../packages/source/assets/images/favicon.png"
+    },
+    "experiments": {
+      "tsconfigPaths": true,
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nativewindmultiplatform",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.nativewindmultiplatform"
+    }
+  }
+}

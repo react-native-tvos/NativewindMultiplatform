@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "NativeWind TV",
+    "slug": "nativewindmultiplatform-tv",
+    "scheme": "nativewindmultiplatform",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "../../packages/source/assets/images/splash.png"
+    },
+    "icon": "../../packages/source/assets/tv_icons/icon-760x760.png",
+    "plugins": [
+      [
+        "@react-native-tvos/config-tv",
+        {
+          "androidTVBanner": "../../packages/source/assets/tv_icons/icon-400x240.png",
+          "androidTVIcon": "../../packages/source/assets/tv_icons/icon-760x760.png",
+          "appleTVImages": {
+            "icon": "../../packages/source/assets/tv_icons/icon-1280x768.png",
+            "iconSmall": "../../packages/source/assets/tv_icons/icon-400x240.png",
+            "iconSmall2x": "../../packages/source/assets/tv_icons/icon-800x480.png",
+            "topShelf": "../../packages/source/assets/tv_icons/icon-1920x720.png",
+            "topShelf2x": "../../packages/source/assets/tv_icons/icon-3840x1440.png",
+            "topShelfWide": "../../packages/source/assets/tv_icons/icon-2320x720.png",
+            "topShelfWide2x": "../../packages/source/assets/tv_icons/icon-4640x1440.png"
+          }
+        }
+      ],
+      "expo-router",
+      "expo-build-properties",
+      "expo-font",
+      "expo-web-browser",
+      "expo-video",
+      "expo-image",
+      "expo-splash-screen"
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "../../packages/source/assets/images/favicon.png"
+    },
+    "experiments": {
+      "tsconfigPaths": true,
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nativewindmultiplatform",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.nativewindmultiplatform"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "nativewind-mobile",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo start",
+    "android": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo run:android",
+    "ios": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo run:ios",
+    "web": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo start --web",
+    "prebuild": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo prebuild --clean",
+    "build:web": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo export --platform web",
+    "deploy:web": "eas deploy --environment=development",
+    "lint": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo lint"
+  },
+  "dependencies": {
+    "@nativewindmultiplatform/source": "workspace:*",
+    "@expo/metro-runtime": "~56.0.11",
+    "@expo/vector-icons": "^15.0.2",
+    "@legendapp/list": "^2.0.19",
+    "expo": "^56.0.3",
+    "expo-build-properties": "~56.0.13",
+    "expo-dev-client": "~56.0.14",
+    "expo-file-system": "~56.0.7",
+    "expo-font": "~56.0.5",
+    "expo-image": "~56.0.8",
+    "expo-linking": "~56.0.11",
+    "expo-router": "~56.2.5",
+    "expo-splash-screen": "~56.0.9",
+    "expo-status-bar": "~56.0.4",
+    "expo-system-ui": "~56.0.5",
+    "expo-video": "~56.1.2",
+    "expo-web-browser": "~56.0.5",
+    "nativewind": "^4.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "npm:react-native-tvos@0.85-stable",
+    "react-native-gesture-handler": "~2.31.1",
+    "react-native-reanimated": "4.3.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "4.25.1",
+    "react-native-web": "^0.21.2",
+    "react-native-worklets": "0.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@types/react": "~19.2.14",
+    "@types/tailwindcss": "^3.1.0",
+    "tailwindcss": "^3.4.15"
+  }
+}
