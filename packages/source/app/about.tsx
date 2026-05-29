@@ -9,6 +9,7 @@ import '../global.css';
 export default function About() {
   const { expoVersion, rnVersion, routerVersion, nativewindVersion } =
     reactNativeInfo;
+  const backLink = Platform.OS === 'web' ? '/' : '../';
 
   return (
     <View className="flex-1 m-0 items-start justify-center bg-[--color-background]">
@@ -34,7 +35,7 @@ export default function About() {
         >
           https://github.com/react-native-tvos/NativewindMultiplatform
         </ThemedLink>
-        <ThemedLink href="/">Dismiss</ThemedLink>
+        <ThemedLink href={backLink}>Dismiss</ThemedLink>
       </View>
     </View>
   );
