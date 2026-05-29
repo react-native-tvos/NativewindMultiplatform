@@ -5,7 +5,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["../../packages/source/*"]
+      "@/*": [
+        "../../packages/source/*"
+      ]
     }
   },
   "include": [
@@ -15,6 +17,8 @@
     "../../packages/source/**/*.ts",
     "../../packages/source/**/*.tsx",
     "../../packages/source/expo-env.d.ts",
-    "../../packages/source/nativewind-env.d.ts"
+    "../../packages/source/nativewind-env.d.ts",
+    "nativewind-env.d.ts",
+    "expo-env.d.ts"
   ]
 }

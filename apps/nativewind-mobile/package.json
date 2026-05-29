@@ -5,14 +5,14 @@
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
-    "start": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo start",
-    "android": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo run:android",
-    "ios": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo run:ios",
-    "web": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo start --web",
-    "prebuild": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo prebuild --clean",
-    "build:web": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo export --platform web",
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "prebuild": "expo prebuild --clean",
+    "build:web": "expo export --platform web",
     "deploy:web": "eas deploy --environment=development",
-    "lint": "EXPO_ROUTER_APP_ROOT=../../packages/source/app expo lint"
+    "lint": "expo lint"
   },
   "dependencies": {
     "@nativewindmultiplatform/source": "workspace:*",
